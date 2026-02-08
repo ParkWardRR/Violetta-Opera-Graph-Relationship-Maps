@@ -1,0 +1,1905 @@
+{
+  "attributes": {
+    "generatedAt": "2026-02-08T03:58:44Z",
+    "name": "Violetta Opera Graph",
+    "version": "1.0.0"
+  },
+  "edges": [
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q186162_Q7317_composed_by",
+      "source": "Q186162",
+      "target": "Q7317"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q375063_Q250952_composed_by",
+      "source": "Q375063",
+      "target": "Q250952"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q452523_Q270662_composed_by",
+      "source": "Q452523",
+      "target": "Q270662"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q628536_Q3100982_composed_by",
+      "source": "Q628536",
+      "target": "Q3100982"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q1362653_Q154770_composed_by",
+      "source": "Q1362653",
+      "target": "Q154770"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q1514155_Q7302_composed_by",
+      "source": "Q1514155",
+      "target": "Q7302"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q2299902_Q1340_composed_by",
+      "source": "Q2299902",
+      "target": "Q1340"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q2836444_Q7317_composed_by",
+      "source": "Q2836444",
+      "target": "Q7317"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q2910617_Q3474723_composed_by",
+      "source": "Q2910617",
+      "target": "Q3474723"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q3010123__composed_by",
+      "source": "Q3010123",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q4305798_Q317397_composed_by",
+      "source": "Q4305798",
+      "target": "Q317397"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q4401101_Q317397_composed_by",
+      "source": "Q4401101",
+      "target": "Q317397"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q4684048__composed_by",
+      "source": "Q4684048",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q5608755_Q213709_composed_by",
+      "source": "Q5608755",
+      "target": "Q213709"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q6691850_Q309709_composed_by",
+      "source": "Q6691850",
+      "target": "Q309709"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q7750400_Q223258_composed_by",
+      "source": "Q7750400",
+      "target": "Q223258"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q7770294_Q724145_composed_by",
+      "source": "Q7770294",
+      "target": "Q724145"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q7991326_Q223258_composed_by",
+      "source": "Q7991326",
+      "target": "Q223258"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q12837132_Q2351779_composed_by",
+      "source": "Q12837132",
+      "target": "Q2351779"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q18215107_Q952520_composed_by",
+      "source": "Q18215107",
+      "target": "Q952520"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q25396906_Q376383_composed_by",
+      "source": "Q25396906",
+      "target": "Q376383"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q47175941__composed_by",
+      "source": "Q47175941",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q49139300_Q76915_composed_by",
+      "source": "Q49139300",
+      "target": "Q76915"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q65084678__composed_by",
+      "source": "Q65084678",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q85853754_Q1871594_composed_by",
+      "source": "Q85853754",
+      "target": "Q1871594"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q107170059__composed_by",
+      "source": "Q107170059",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q107287298_Q724933_composed_by",
+      "source": "Q107287298",
+      "target": "Q724933"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q107509220_Q1461916_composed_by",
+      "source": "Q107509220",
+      "target": "Q1461916"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q108899563_Q3771066_composed_by",
+      "source": "Q108899563",
+      "target": "Q3771066"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q108926950_Q357022_composed_by",
+      "source": "Q108926950",
+      "target": "Q357022"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q108940911_Q592278_composed_by",
+      "source": "Q108940911",
+      "target": "Q592278"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q109241398_Q505202_composed_by",
+      "source": "Q109241398",
+      "target": "Q505202"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q109312922__composed_by",
+      "source": "Q109312922",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q110805609_Q633817_composed_by",
+      "source": "Q110805609",
+      "target": "Q633817"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q110891042_Q109875_composed_by",
+      "source": "Q110891042",
+      "target": "Q109875"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q111207768__composed_by",
+      "source": "Q111207768",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q120752774_Q1340_composed_by",
+      "source": "Q120752774",
+      "target": "Q1340"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q122872507_Q18786059_composed_by",
+      "source": "Q122872507",
+      "target": "Q18786059"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q125150695__composed_by",
+      "source": "Q125150695",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q130751511_Q157672_composed_by",
+      "source": "Q130751511",
+      "target": "Q157672"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q130751511_Q1200639_composed_by",
+      "source": "Q130751511",
+      "target": "Q1200639"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q134697935__composed_by",
+      "source": "Q134697935",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q134954178_Q5789239_composed_by",
+      "source": "Q134954178",
+      "target": "Q5789239"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q134989974_Q1103542_composed_by",
+      "source": "Q134989974",
+      "target": "Q1103542"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q136175036_Q766262_composed_by",
+      "source": "Q136175036",
+      "target": "Q766262"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q136399481_Q83326_composed_by",
+      "source": "Q136399481",
+      "target": "Q83326"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q136399567_Q54932610_composed_by",
+      "source": "Q136399567",
+      "target": "Q54932610"
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q136539701__composed_by",
+      "source": "Q136539701",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q137585081__composed_by",
+      "source": "Q137585081",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q137585082__composed_by",
+      "source": "Q137585082",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q137585083__composed_by",
+      "source": "Q137585083",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q137884369__composed_by",
+      "source": "Q137884369",
+      "target": ""
+    },
+    {
+      "attributes": {
+        "type": "composed_by",
+        "weight": 1
+      },
+      "key": "e_Q137895981_Q5872361_composed_by",
+      "source": "Q137895981",
+      "target": "Q5872361"
+    }
+  ],
+  "nodes": [
+    {
+      "attributes": {
+        "birthYear": 1892,
+        "color": "#6c757d",
+        "deathYear": 1983,
+        "label": "Germaine Tailleferre",
+        "size": 8,
+        "type": "composer",
+        "x": 86.99731795409366,
+        "y": 92.98209874642902
+      },
+      "key": "Q376383"
+    },
+    {
+      "attributes": {
+        "birthYear": 1775,
+        "color": "#6c757d",
+        "deathYear": 1834,
+        "label": "François Adrien Boieldieu",
+        "size": 8,
+        "type": "composer",
+        "x": 57.56927162319303,
+        "y": 0.705008099524207
+      },
+      "key": "Q109875"
+    },
+    {
+      "attributes": {
+        "birthYear": 1742,
+        "color": "#6c757d",
+        "deathYear": 1821,
+        "label": "Félix Máximo López",
+        "size": 8,
+        "type": "composer",
+        "x": 99.83052858141153,
+        "y": 75.02919823248408
+      },
+      "key": "Q5872361"
+    },
+    {
+      "attributes": {
+        "birthYear": 1926,
+        "color": "#6c757d",
+        "deathYear": 2012,
+        "label": "Hans Werner Henze",
+        "size": 8,
+        "type": "composer",
+        "x": 92.15560418448266,
+        "y": -63.504730276124846
+      },
+      "key": "Q76915"
+    },
+    {
+      "attributes": {
+        "birthYear": 1839,
+        "color": "#6c757d",
+        "deathYear": 1903,
+        "label": "Victorin de Joncières",
+        "size": 8,
+        "type": "composer",
+        "x": -72.9705006344674,
+        "y": 81.94168465454428
+      },
+      "key": "Q724933"
+    },
+    {
+      "attributes": {
+        "birthYear": 1959,
+        "color": "#6c757d",
+        "label": "Carlo Galante",
+        "size": 8,
+        "type": "composer",
+        "x": 37.49884805325584,
+        "y": 82.82013292445151
+      },
+      "key": "Q54932610"
+    },
+    {
+      "attributes": {
+        "birthYear": 1808,
+        "color": "#6c757d",
+        "deathYear": 1866,
+        "label": "Antoine Louis Clapisson",
+        "size": 8,
+        "type": "composer",
+        "x": 43.57738802858245,
+        "y": 67.35264627936661
+      },
+      "key": "Q1871594"
+    },
+    {
+      "attributes": {
+        "birthYear": 1922,
+        "color": "#6c757d",
+        "deathYear": 2009,
+        "label": "Lukas Foss",
+        "size": 8,
+        "type": "composer",
+        "x": 78.13504999858901,
+        "y": -59.02084448717035
+      },
+      "key": "Q213709"
+    },
+    {
+      "attributes": {
+        "birthYear": 1813,
+        "color": "#6c757d",
+        "deathYear": 1901,
+        "label": "Giuseppe Verdi",
+        "size": 8,
+        "type": "composer",
+        "x": 22.425303146806883,
+        "y": 44.535308086894304
+      },
+      "key": "Q7317"
+    },
+    {
+      "attributes": {
+        "birthYear": 1787,
+        "color": "#6c757d",
+        "deathYear": 1855,
+        "label": "Henry Bishop",
+        "size": 8,
+        "type": "composer",
+        "x": 80.14957781890547,
+        "y": 63.101224249168126
+      },
+      "key": "Q1200639"
+    },
+    {
+      "attributes": {
+        "birthYear": 1938,
+        "color": "#6c757d",
+        "label": "Leonid Klinichev",
+        "size": 8,
+        "type": "composer",
+        "x": 2.656491781583668,
+        "y": 93.96942952116149
+      },
+      "key": "Q18786059"
+    },
+    {
+      "attributes": {
+        "birthYear": 1866,
+        "color": "#6c757d",
+        "deathYear": 1950,
+        "label": "Francesco Cilea",
+        "size": 8,
+        "type": "composer",
+        "x": -13.351693504347324,
+        "y": 2.4460112548162556
+      },
+      "key": "Q250952"
+    },
+    {
+      "attributes": {
+        "color": "#6c757d",
+        "label": "",
+        "size": 21,
+        "type": "composer",
+        "x": 54.97610300411176,
+        "y": -54.48500735513917
+      },
+      "key": ""
+    },
+    {
+      "attributes": {
+        "birthYear": 1772,
+        "color": "#6c757d",
+        "deathYear": 1839,
+        "label": "Giuseppe Mosca",
+        "size": 8,
+        "type": "composer",
+        "x": 38.42131254493617,
+        "y": -59.986125836533446
+      },
+      "key": "Q592278"
+    },
+    {
+      "attributes": {
+        "birthYear": 1710,
+        "color": "#6c757d",
+        "deathYear": 1778,
+        "label": "Thomas Arne",
+        "size": 8,
+        "type": "composer",
+        "x": -58.34051898588899,
+        "y": 80.3191836944315
+      },
+      "key": "Q309709"
+    },
+    {
+      "attributes": {
+        "birthYear": 1911,
+        "color": "#6c757d",
+        "deathYear": 2007,
+        "label": "Gian Carlo Menotti",
+        "size": 8,
+        "type": "composer",
+        "x": 19.153003931989957,
+        "y": -27.64763318602948
+      },
+      "key": "Q270662"
+    },
+    {
+      "attributes": {
+        "birthYear": 1816,
+        "color": "#6c757d",
+        "deathYear": 1878,
+        "label": "François Bazin",
+        "size": 8,
+        "type": "composer",
+        "x": 63.699339731841775,
+        "y": 58.26376293791432
+      },
+      "key": "Q633817"
+    },
+    {
+      "attributes": {
+        "birthYear": 1858,
+        "color": "#6c757d",
+        "deathYear": 1933,
+        "label": "Auguste Chapuis",
+        "size": 8,
+        "type": "composer",
+        "x": -12.707871837999704,
+        "y": 49.93688586525394
+      },
+      "key": "Q766262"
+    },
+    {
+      "attributes": {
+        "birthYear": 1752,
+        "color": "#6c757d",
+        "deathYear": 1837,
+        "label": "Niccolò Antonio Zingarelli",
+        "size": 8,
+        "type": "composer",
+        "x": -65.96350129040468,
+        "y": -23.62133514073919
+      },
+      "key": "Q505202"
+    },
+    {
+      "attributes": {
+        "birthYear": 1942,
+        "color": "#6c757d",
+        "deathYear": 2013,
+        "label": "Friedrich Schenker",
+        "size": 8,
+        "type": "composer",
+        "x": -32.54835827199642,
+        "y": 34.014151164716054
+      },
+      "key": "Q1461916"
+    },
+    {
+      "attributes": {
+        "birthYear": 1935,
+        "color": "#6c757d",
+        "deathYear": 2012,
+        "label": "Otto Ketting",
+        "size": 8,
+        "type": "composer",
+        "x": -0.09714088794100917,
+        "y": 32.30901167977618
+      },
+      "key": "Q1103542"
+    },
+    {
+      "attributes": {
+        "birthYear": 1875,
+        "color": "#6c757d",
+        "deathYear": 1957,
+        "label": "Henry Février",
+        "size": 8,
+        "type": "composer",
+        "x": 20.3054580601614,
+        "y": 50.07122310444737
+      },
+      "key": "Q3100982"
+    },
+    {
+      "attributes": {
+        "birthYear": 1796,
+        "color": "#6c757d",
+        "deathYear": 1867,
+        "label": "Giovanni Pacini",
+        "size": 8,
+        "type": "composer",
+        "x": 9.085158343583984,
+        "y": -20.671380062427176
+      },
+      "key": "Q357022"
+    },
+    {
+      "attributes": {
+        "birthYear": 1782,
+        "color": "#6c757d",
+        "deathYear": 1871,
+        "label": "Daniel François Esprit Auber",
+        "size": 8,
+        "type": "composer",
+        "x": -3.327833446537639,
+        "y": -32.25373658315047
+      },
+      "key": "Q157672"
+    },
+    {
+      "attributes": {
+        "birthYear": 1885,
+        "color": "#6c757d",
+        "deathYear": 1948,
+        "label": "Uzeyir Hajibeyov",
+        "size": 8,
+        "type": "composer",
+        "x": 68.11386064843592,
+        "y": 72.74088199078494
+      },
+      "key": "Q317397"
+    },
+    {
+      "attributes": {
+        "birthYear": 1881,
+        "color": "#6c757d",
+        "deathYear": 1945,
+        "label": "Béla Bartók",
+        "size": 8,
+        "type": "composer",
+        "x": -55.78912114265104,
+        "y": 36.450487249332895
+      },
+      "key": "Q83326"
+    },
+    {
+      "attributes": {
+        "birthYear": 1884,
+        "color": "#6c757d",
+        "deathYear": 1950,
+        "label": "Zulfugar Hajibeyov",
+        "size": 8,
+        "type": "composer",
+        "x": 50.79572565986973,
+        "y": -31.636114544802595
+      },
+      "key": "Q2351779"
+    },
+    {
+      "attributes": {
+        "birthYear": 1885,
+        "color": "#6c757d",
+        "deathYear": 1951,
+        "label": "Giuseppe Mulè",
+        "size": 8,
+        "type": "composer",
+        "x": 68.02254858455981,
+        "y": -13.717913772995203
+      },
+      "key": "Q3771066"
+    },
+    {
+      "attributes": {
+        "birthYear": 1753,
+        "color": "#6c757d",
+        "deathYear": 1809,
+        "label": "Nicolas Dalayrac",
+        "size": 8,
+        "type": "composer",
+        "x": -36.824759652309446,
+        "y": 83.32259992226562
+      },
+      "key": "Q952520"
+    },
+    {
+      "attributes": {
+        "birthYear": 1874,
+        "color": "#6c757d",
+        "deathYear": 1951,
+        "label": "Arnold Schoenberg",
+        "size": 8,
+        "type": "composer",
+        "x": -33.50952746576934,
+        "y": -56.75000691228371
+      },
+      "key": "Q154770"
+    },
+    {
+      "attributes": {
+        "birthYear": 1956,
+        "color": "#6c757d",
+        "label": "Marisa Manchado",
+        "size": 8,
+        "type": "composer",
+        "x": -71.77449311990657,
+        "y": 1.2249504604040027
+      },
+      "key": "Q5789239"
+    },
+    {
+      "attributes": {
+        "birthYear": 1685,
+        "color": "#6c757d",
+        "deathYear": 1759,
+        "label": "George Frideric Handel",
+        "size": 8,
+        "type": "composer",
+        "x": 71.47096993726612,
+        "y": 21.47581908854616
+      },
+      "key": "Q7302"
+    },
+    {
+      "attributes": {
+        "birthYear": 1678,
+        "color": "#6c757d",
+        "deathYear": 1741,
+        "label": "Antonio Vivaldi",
+        "size": 8,
+        "type": "composer",
+        "x": 38.71267736101848,
+        "y": 32.380555559957315
+      },
+      "key": "Q1340"
+    },
+    {
+      "attributes": {
+        "birthYear": 1890,
+        "color": "#6c757d",
+        "deathYear": 1959,
+        "label": "Bohuslav Martinů",
+        "size": 8,
+        "type": "composer",
+        "x": -7.7205491207330965,
+        "y": 40.01752888505868
+      },
+      "key": "Q223258"
+    },
+    {
+      "attributes": {
+        "birthYear": 1913,
+        "color": "#6c757d",
+        "deathYear": 2008,
+        "label": "Norman Dello Joio",
+        "size": 8,
+        "type": "composer",
+        "x": 89.27256268157774,
+        "y": -48.77482571284519
+      },
+      "key": "Q724145"
+    },
+    {
+      "attributes": {
+        "birthYear": 1927,
+        "color": "#6c757d",
+        "deathYear": 1997,
+        "label": "Sayed Mekawy",
+        "size": 8,
+        "type": "composer",
+        "x": 10.392820680279243,
+        "y": 36.840498472074614
+      },
+      "key": "Q3474723"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q7302",
+        "composerName": "George Frideric Handel",
+        "label": "Germanico",
+        "language": "Italian",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -64.3921919873548,
+        "y": 44.223901408067235,
+        "projX": -0.3770843363968952,
+        "projY": 1.5466439366246276
+      },
+      "key": "Q1514155"
+    },
+    {
+      "attributes": {
+        "color": "#3498db",
+        "composerId": "Q592278",
+        "composerName": "Giuseppe Mosca",
+        "decade": "1810s",
+        "eraBucket": "Classical",
+        "label": "Amori all'armi",
+        "language": "",
+        "premiereLocation": "",
+        "premiereYear": 1812,
+        "size": 3,
+        "type": "opera",
+        "x": 96.58757690064994,
+        "y": -83.87200183415482,
+        "projX": -0.162428937591384,
+        "projY": 1.809340477989736
+      },
+      "key": "Q108940911"
+    },
+    {
+      "attributes": {
+        "color": "#2ecc71",
+        "composerId": "Q1340",
+        "composerName": "Antonio Vivaldi",
+        "decade": "1720s",
+        "eraBucket": "Baroque",
+        "label": "L'inganno trionfante in amore",
+        "language": "",
+        "premiereLocation": "",
+        "premiereYear": 1725,
+        "size": 3,
+        "type": "opera",
+        "x": -12.494427087666523,
+        "y": 10.801779201268587,
+        "projX": -0.41509622244485755,
+        "projY": 2.116554767057086
+      },
+      "key": "Q120752774"
+    },
+    {
+      "attributes": {
+        "color": "#3498db",
+        "composerId": "Q952520",
+        "composerName": "Nicolas Dalayrac",
+        "decade": "1790s",
+        "eraBucket": "Classical",
+        "label": "Léon ou le Château de Monténéro",
+        "language": "French",
+        "premiereLocation": "",
+        "premiereYear": 1798,
+        "size": 3,
+        "type": "opera",
+        "x": 57.89224034411896,
+        "y": -10.685535853996768,
+        "projX": -1.0549845075944515,
+        "projY": 2.184327572446276
+      },
+      "key": "Q18215107"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "The Man from Manufaktura",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -34.55555101226176,
+        "y": 94.53412421426654,
+        "projX": -2.9785887998392258,
+        "projY": 2.1511612628261347
+      },
+      "key": "Q125150695"
+    },
+    {
+      "attributes": {
+        "color": "#2ecc71",
+        "composerId": "Q1340",
+        "composerName": "Antonio Vivaldi",
+        "decade": "1730s",
+        "eraBucket": "Baroque",
+        "label": "Bajazet",
+        "language": "Italian",
+        "premiereLocation": "",
+        "premiereYear": 1735,
+        "size": 3,
+        "type": "opera",
+        "x": 95.29390452499374,
+        "y": 66.92640792501902,
+        "projX": -0.30150541858102375,
+        "projY": 2.4271652825695544
+      },
+      "key": "Q2299902"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q157672",
+        "composerName": "Daniel François Esprit Auber",
+        "label": "The Maid of Cashmere",
+        "language": "",
+        "premiereLocation": "",
+        "size": 4,
+        "type": "opera",
+        "x": 59.79981891642748,
+        "y": 18.95552404878633,
+        "projX": -2.357356680405014,
+        "projY": 2.934188494394975
+      },
+      "key": "Q130751511"
+    },
+    {
+      "attributes": {
+        "color": "#f39c12",
+        "composerId": "Q154770",
+        "composerName": "Arnold Schoenberg",
+        "decade": "1920s",
+        "eraBucket": "20th Century",
+        "label": "Erwartung",
+        "language": "German",
+        "premiereLocation": "",
+        "premiereYear": 1924,
+        "size": 3,
+        "type": "opera",
+        "x": 51.99960161524956,
+        "y": -27.849307082731627,
+        "projX": -3.356852521119953,
+        "projY": 1.7570930227723323
+      },
+      "key": "Q1362653"
+    },
+    {
+      "attributes": {
+        "color": "#f39c12",
+        "composerId": "Q270662",
+        "composerName": "Gian Carlo Menotti",
+        "decade": "1950s",
+        "eraBucket": "20th Century",
+        "label": "Amahl and the Night Visitors",
+        "language": "English",
+        "premiereLocation": "",
+        "premiereYear": 1951,
+        "size": 3,
+        "type": "opera",
+        "x": -88.13669359792395,
+        "y": -43.77340345489957,
+        "projX": -1.7160559086120264,
+        "projY": 1.2314079386019354
+      },
+      "key": "Q452523"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q633817",
+        "composerName": "François Bazin",
+        "label": "Q110805609",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 8.835252283692,
+        "y": 79.66805144549096,
+        "projX": -2.5614660903115056,
+        "projY": 2.441146006800968
+      },
+      "key": "Q110805609"
+    },
+    {
+      "attributes": {
+        "color": "#e74c3c",
+        "composerId": "Q250952",
+        "composerName": "Francesco Cilea",
+        "decade": "1900s",
+        "eraBucket": "Late Romantic",
+        "label": "Adriana Lecouvreur",
+        "language": "Italian",
+        "premiereLocation": "",
+        "premiereYear": 1902,
+        "size": 3,
+        "type": "opera",
+        "x": 39.190245138238026,
+        "y": 9.896119443833669,
+        "projX": 0.006929737789099473,
+        "projY": 1.1098429883690284
+      },
+      "key": "Q375063"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q3474723",
+        "composerName": "Sayed Mekawy",
+        "label": "El Leila El Kebira",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -12.401643711131612,
+        "y": 71.06221020190574,
+        "projX": -0.6886619916895355,
+        "projY": 2.919183423785356
+      },
+      "key": "Q2910617"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Q137585082",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 82.82861525923258,
+        "y": 11.856868812203402,
+        "projX": -2.857652157667082,
+        "projY": 4.168354895419348
+      },
+      "key": "Q137585082"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q1871594",
+        "composerName": "Antoine Louis Clapisson",
+        "label": "Q85853754",
+        "language": "French",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -59.726126883966614,
+        "y": 6.292621678522536,
+        "projX": -1.573724701873727,
+        "projY": 2.404155518440041
+      },
+      "key": "Q85853754"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Q109312922",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 17.57938238664171,
+        "y": 55.55054285832804,
+        "projX": -3.1967033427453946,
+        "projY": 3.2246518523116787
+      },
+      "key": "Q109312922"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Q107170059",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -44.125288947491015,
+        "y": -40.88074681642881,
+        "projX": -3.5754607046299576,
+        "projY": 3.685476987080362
+      },
+      "key": "Q107170059"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q5789239",
+        "composerName": "Marisa Manchado",
+        "label": "Q134954178",
+        "language": "Spanish",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 73.67574535683107,
+        "y": -17.916032587423885,
+        "projX": -1.7004337317899405,
+        "projY": 3.707903813568433
+      },
+      "key": "Q134954178"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Q134697935",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 49.85519377175473,
+        "y": -10.89339950135468,
+        "projX": -2.2486720537274163,
+        "projY": 4.379512259796723
+      },
+      "key": "Q134697935"
+    },
+    {
+      "attributes": {
+        "color": "#1abc9c",
+        "composerId": "",
+        "composerName": "",
+        "decade": "1980s",
+        "eraBucket": "Contemporary",
+        "label": "Q137884369",
+        "language": "",
+        "premiereLocation": "",
+        "premiereYear": 1981,
+        "size": 3,
+        "type": "opera",
+        "x": 68.83667604562885,
+        "y": -78.14512215516905,
+        "projX": -2.1056300591681936,
+        "projY": 3.3348233835949177
+      },
+      "key": "Q137884369"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Q111207768",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 40.51039591925206,
+        "y": 0.5533777171300187,
+        "projX": -3.2946889198226748,
+        "projY": 4.136245826833938
+      },
+      "key": "Q111207768"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q76915",
+        "composerName": "Hans Werner Henze",
+        "label": "Das Ende einer Welt",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -23.213324195621766,
+        "y": -18.781765384329944,
+        "projX": -1.9509207804946826,
+        "projY": 1.9940677389713282
+      },
+      "key": "Q49139300"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Q136539701",
+        "language": "Walloon",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 84.2135897579129,
+        "y": -17.53103392823631,
+        "projX": -2.4785878767531693,
+        "projY": 4.625191326359264
+      },
+      "key": "Q136539701"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q5872361",
+        "composerName": "Félix Máximo López",
+        "label": "Q137895981",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 14.098782995993247,
+        "y": -28.197677555465248,
+        "projX": -1.9134273872347785,
+        "projY": 4.104641117817947
+      },
+      "key": "Q137895981"
+    },
+    {
+      "attributes": {
+        "color": "#e74c3c",
+        "composerId": "Q7317",
+        "composerName": "Giuseppe Verdi",
+        "decade": "1850s",
+        "eraBucket": "Late Romantic",
+        "genre": "Stage",
+        "label": "La traviata",
+        "language": "Italian",
+        "premiereLocation": "",
+        "premiereYear": 1853,
+        "size": 3,
+        "type": "opera",
+        "x": 34.722349434953486,
+        "y": 69.93468749733373,
+        "projX": 0.31894390647117965,
+        "projY": 1.7143041802961834
+      },
+      "key": "Q186162"
+    },
+    {
+      "attributes": {
+        "color": "#e74c3c",
+        "composerId": "Q766262",
+        "composerName": "Auguste Chapuis",
+        "decade": "1890s",
+        "eraBucket": "Late Romantic",
+        "label": "Enguerrande",
+        "language": "",
+        "premiereLocation": "",
+        "premiereYear": 1892,
+        "size": 3,
+        "type": "opera",
+        "x": -94.23639261017883,
+        "y": 62.69328841323309,
+        "projX": -0.13103909210965065,
+        "projY": 1.0885207168572142
+      },
+      "key": "Q136175036"
+    },
+    {
+      "attributes": {
+        "color": "#f39c12",
+        "composerId": "Q317397",
+        "composerName": "Uzeyir Hajibeyov",
+        "decade": "1910s",
+        "eraBucket": "20th Century",
+        "label": "Rustam and Zohrab",
+        "language": "Azerbaijani",
+        "premiereLocation": "",
+        "premiereYear": 1910,
+        "size": 3,
+        "type": "opera",
+        "x": -89.03530035533396,
+        "y": 3.3195717034716523,
+        "projX": -3.3087238725388355,
+        "projY": 1.224313574384525
+      },
+      "key": "Q4401101"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Con la música a otra parte",
+        "language": "Spanish",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -3.744047920222755,
+        "y": -46.45676719996883,
+        "projX": -0.11413287688711106,
+        "projY": 2.537640827175656
+      },
+      "key": "Q47175941"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Q137585081",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 32.19814021048043,
+        "y": 86.52426885952232,
+        "projX": -2.9934999828319393,
+        "projY": 4.564458811724311
+      },
+      "key": "Q137585081"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Q137585083",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 10.697722825336655,
+        "y": -58.85852023650637,
+        "projX": -2.792146766552747,
+        "projY": 4.349029172762681
+      },
+      "key": "Q137585083"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q724145",
+        "composerName": "Norman Dello Joio",
+        "label": "The Triumph of St. Joan",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -62.86966377037287,
+        "y": 32.85853144834164,
+        "projX": -1.8196989560101287,
+        "projY": 3.025512930052986
+      },
+      "key": "Q7770294"
+    },
+    {
+      "attributes": {
+        "color": "#f39c12",
+        "composerId": "Q2351779",
+        "composerName": "Zulfugar Hajibeyov",
+        "decade": "1910s",
+        "eraBucket": "20th Century",
+        "label": "Ashiq Qarib",
+        "language": "Azerbaijani",
+        "premiereLocation": "",
+        "premiereYear": 1916,
+        "size": 3,
+        "type": "opera",
+        "x": 19.940887993670216,
+        "y": -65.15983054908995,
+        "projX": -3.088326604099197,
+        "projY": 1.351999548369935
+      },
+      "key": "Q12837132"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q724933",
+        "composerName": "Victorin de Joncières",
+        "label": "Q107287298",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -39.63436924327874,
+        "y": -8.449413460021375,
+        "projX": -2.7861134907721765,
+        "projY": 3.130080775028949
+      },
+      "key": "Q107287298"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q3100982",
+        "composerName": "Henry Février",
+        "label": "Monna Vanna",
+        "language": "French",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -74.9442568986437,
+        "y": -51.548397360362095,
+        "projX": -1.2916731808826936,
+        "projY": 2.6862181439314954
+      },
+      "key": "Q628536"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q376383",
+        "composerName": "Germaine Tailleferre",
+        "label": "Q25396906",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -49.930102916570696,
+        "y": 46.05569491983181,
+        "projX": -3.1560510821210315,
+        "projY": 3.5351055964151583
+      },
+      "key": "Q25396906"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q223258",
+        "composerName": "Bohuslav Martinů",
+        "label": "What Men Live By",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -67.1420071723478,
+        "y": -40.050242575970316,
+        "projX": -2.5396327362953866,
+        "projY": 1.2824580526326717
+      },
+      "key": "Q7991326"
+    },
+    {
+      "attributes": {
+        "color": "#3498db",
+        "composerId": "Q505202",
+        "composerName": "Niccolò Antonio Zingarelli",
+        "decade": "1790s",
+        "eraBucket": "Classical",
+        "genre": "Stage",
+        "label": "Alzira",
+        "language": "",
+        "premiereLocation": "",
+        "premiereYear": 1794,
+        "size": 3,
+        "type": "opera",
+        "x": -54.30851788627351,
+        "y": -62.13069416857893,
+        "projX": -0.7456563203569861,
+        "projY": 1.8429390576820306
+      },
+      "key": "Q109241398"
+    },
+    {
+      "attributes": {
+        "color": "#f39c12",
+        "composerId": "Q223258",
+        "composerName": "Bohuslav Martinů",
+        "decade": "1950s",
+        "eraBucket": "20th Century",
+        "label": "The Marriage",
+        "language": "English",
+        "premiereLocation": "",
+        "premiereYear": 1953,
+        "size": 3,
+        "type": "opera",
+        "x": -0.4711031272450157,
+        "y": 82.3763947904134,
+        "projX": -2.7620329482754427,
+        "projY": 0.7970638058315962
+      },
+      "key": "Q7750400"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Q3010123",
+        "language": "French",
+        "premiereLocation": "Théâtre du Palais-Royal",
+        "size": 3,
+        "type": "opera",
+        "x": 65.75245139475601,
+        "y": -50.65761813652669,
+        "projX": -2.7306072970054442,
+        "projY": 2.8076630440970174
+      },
+      "key": "Q3010123"
+    },
+    {
+      "attributes": {
+        "color": "#9b59b6",
+        "composerId": "Q357022",
+        "composerName": "Giovanni Pacini",
+        "decade": "1820s",
+        "eraBucket": "Early Romantic",
+        "label": "Amazilia",
+        "language": "",
+        "premiereLocation": "",
+        "premiereYear": 1825,
+        "size": 3,
+        "type": "opera",
+        "x": 84.46365563021598,
+        "y": -36.16944998995544,
+        "projX": -0.5292734580791635,
+        "projY": 1.3453796245672112
+      },
+      "key": "Q108926950"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Adolf",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": -51.539722829993636,
+        "y": -72.7106634919692,
+        "projX": -2.1749790858743876,
+        "projY": 1.8605759443319918
+      },
+      "key": "Q4684048"
+    },
+    {
+      "attributes": {
+        "color": "#e74c3c",
+        "composerId": "Q7317",
+        "composerName": "Giuseppe Verdi",
+        "decade": "1850s",
+        "eraBucket": "Late Romantic",
+        "label": "Le Trouvère",
+        "language": "French",
+        "premiereLocation": "",
+        "premiereYear": 1857,
+        "size": 3,
+        "type": "opera",
+        "x": -87.62558933512408,
+        "y": 7.997947804198375,
+        "projX": 0.3327410012921694,
+        "projY": 1.4103197267082663
+      },
+      "key": "Q2836444"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "",
+        "composerName": "",
+        "label": "Nurmahal",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 5.919433651620537,
+        "y": 86.94367479825564,
+        "projX": -1.1089397991576346,
+        "projY": 3.1747358388988
+      },
+      "key": "Q65084678"
+    },
+    {
+      "attributes": {
+        "color": "#3498db",
+        "composerId": "Q309709",
+        "composerName": "Thomas Arne",
+        "decade": "1760s",
+        "eraBucket": "Classical",
+        "label": "Love in a Village",
+        "language": "English",
+        "premiereLocation": "",
+        "premiereYear": 1762,
+        "size": 3,
+        "type": "opera",
+        "x": 26.969122197146376,
+        "y": -95.2947952150425,
+        "projX": -1.111044476901328,
+        "projY": 1.6532977499355195
+      },
+      "key": "Q6691850"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q1461916",
+        "composerName": "Friedrich Schenker",
+        "label": "Q107509220",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 99.2777784846752,
+        "y": -8.64697686379641,
+        "projX": -3.3238368618390064,
+        "projY": 2.578885141979776
+      },
+      "key": "Q107509220"
+    },
+    {
+      "attributes": {
+        "color": "#f39c12",
+        "composerId": "Q317397",
+        "composerName": "Uzeyir Hajibeyov",
+        "decade": "1910s",
+        "eraBucket": "20th Century",
+        "label": "Husband and Wife",
+        "language": "Azerbaijani",
+        "premiereLocation": "",
+        "premiereYear": 1910,
+        "size": 3,
+        "type": "opera",
+        "x": -64.22850172378136,
+        "y": 93.2116175331127,
+        "projX": -3.2064654681996756,
+        "projY": 0.7320592232018893
+      },
+      "key": "Q4305798"
+    },
+    {
+      "attributes": {
+        "color": "#1abc9c",
+        "composerId": "Q1103542",
+        "composerName": "Otto Ketting",
+        "decade": "1980s",
+        "eraBucket": "Contemporary",
+        "label": "Ithaka",
+        "language": "English",
+        "premiereLocation": "",
+        "premiereYear": 1986,
+        "size": 3,
+        "type": "opera",
+        "x": -84.44074375778476,
+        "y": 66.94154673690872,
+        "projX": -1.9972821613248042,
+        "projY": 2.2770424172577455
+      },
+      "key": "Q134989974"
+    },
+    {
+      "attributes": {
+        "color": "#1abc9c",
+        "composerId": "Q18786059",
+        "composerName": "Leonid Klinichev",
+        "decade": "2010s",
+        "eraBucket": "Contemporary",
+        "label": "Anna",
+        "language": "",
+        "premiereLocation": "",
+        "premiereYear": 2011,
+        "size": 3,
+        "type": "opera",
+        "x": 33.877692844598215,
+        "y": -38.767042326494085,
+        "projX": -2.2399505635377888,
+        "projY": 0.9224514166430103
+      },
+      "key": "Q122872507"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q83326",
+        "composerName": "Béla Bartók",
+        "label": "Q136399481",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 23.805508178852563,
+        "y": -38.16776207176456,
+        "projX": -2.5111748509280547,
+        "projY": 3.730145770820955
+      },
+      "key": "Q136399481"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q213709",
+        "composerName": "Lukas Foss",
+        "label": "Griffelkin",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 86.75097025179451,
+        "y": -51.57625083157627,
+        "projX": -2.600918722378959,
+        "projY": 1.6923668549390765
+      },
+      "key": "Q5608755"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q54932610",
+        "composerName": "Carlo Galante",
+        "label": "Q136399567",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 9.819456907762742,
+        "y": -47.107261559717514,
+        "projX": -2.442028875967638,
+        "projY": 4.035884424960502
+      },
+      "key": "Q136399567"
+    },
+    {
+      "attributes": {
+        "color": "#999",
+        "composerId": "Q109875",
+        "composerName": "François Adrien Boieldieu",
+        "label": "Q110891042",
+        "language": "",
+        "premiereLocation": "",
+        "size": 3,
+        "type": "opera",
+        "x": 59.79595164806133,
+        "y": 58.433480300145476,
+        "projX": -1.999863646789558,
+        "projY": 2.705932398398913
+      },
+      "key": "Q110891042"
+    },
+    {
+      "attributes": {
+        "color": "#f39c12",
+        "composerId": "Q3771066",
+        "composerName": "Giuseppe Mulè",
+        "decade": "1910s",
+        "eraBucket": "20th Century",
+        "label": "Al Lupo!",
+        "language": "Italian",
+        "premiereLocation": "",
+        "premiereYear": 1919,
+        "size": 3,
+        "type": "opera",
+        "x": 69.33304923911686,
+        "y": -51.2649555409872,
+        "projX": -0.8627515232099782,
+        "projY": 1.0250546119399473
+      },
+      "key": "Q108899563"
+    }
+  ],
+  "options": {
+    "allowSelfLoops": false,
+    "multi": false,
+    "type": "mixed"
+  }
+}

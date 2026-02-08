@@ -10,6 +10,10 @@
 </p>
 
 <p align="center">
+  <a href="https://parkwardrr.github.io/Violetta-Opera-Graph-Relationship-Maps/"><img src="https://img.shields.io/badge/Live%20Demo-Open%20in%20Browser-8B5CF6?style=for-the-badge&logo=github&logoColor=white" alt="Live Demo"/></a>
+</p>
+
+<p align="center">
   <a href="https://blueoakcouncil.org/license/1.0.0"><img src="https://img.shields.io/badge/License-Blue%20Oak%201.0.0-2D6AA3.svg?style=flat-square" alt="License"/></a>
   <img src="https://img.shields.io/badge/Swift-6.2-F05138.svg?style=flat-square&logo=swift&logoColor=white" alt="Swift"/>
   <img src="https://img.shields.io/badge/Go-1.25-00ADD8.svg?style=flat-square&logo=go&logoColor=white" alt="Go"/>
@@ -214,9 +218,21 @@ To regenerate screenshots: `make screenshots`
 
 ---
 
+## Live Demo (GitHub Pages)
+
+The full visualization is deployed automatically to GitHub Pages on every push to `main`:
+
+**https://parkwardrr.github.io/Violetta-Opera-Graph-Relationship-Maps/**
+
+No backend needed -- the graph, timeline, and Discover tabs work entirely in the browser. Only the Events/Scraper features require the Go server.
+
+The deployment is handled by a GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) that builds the Vite app with `graph.json` bundled from `web/public/`.
+
+---
+
 ## S3 / Static Hosting
 
-Violetta can be deployed as a static site on S3 (or any static host) with no backend required. The graph visualization works fully offline -- only the Events/Scraper features need the Go server.
+Violetta can also be deployed to S3 or any static host with no backend required.
 
 ### Build for S3
 
