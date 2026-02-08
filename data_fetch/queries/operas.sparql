@@ -1,0 +1,15 @@
+SELECT ?opera ?operaLabel ?composer ?composerLabel
+       ?premiereDate ?premierePlace ?premierePlaceLabel
+       ?librettist ?librettistLabel ?language ?languageLabel
+       ?genre ?genreLabel
+WHERE {
+  ?opera wdt:P31/wdt:P279* wd:Q1344 .
+  OPTIONAL { ?opera wdt:P86 ?composer . }
+  OPTIONAL { ?opera wdt:P1191 ?premiereDate . }
+  OPTIONAL { ?opera wdt:P276 ?premierePlace . }
+  OPTIONAL { ?opera wdt:P50 ?librettist . }
+  OPTIONAL { ?opera wdt:P407 ?language . }
+  OPTIONAL { ?opera wdt:P136 ?genre . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+}
+LIMIT 5000
