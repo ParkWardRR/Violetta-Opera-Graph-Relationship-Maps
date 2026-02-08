@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --color-baroque: #2ecc71;
+  --color-classical: #3498db;
+  --color-early-romantic: #9b59b6;
+  --color-late-romantic: #e74c3c;
+  --color-20th-century: #f39c12;
+  --color-contemporary: #1abc9c;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}

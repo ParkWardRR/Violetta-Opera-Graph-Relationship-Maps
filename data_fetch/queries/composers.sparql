@@ -1,0 +1,12 @@
+SELECT DISTINCT ?composer ?composerLabel
+       ?birthDate ?deathDate
+       ?nationality ?nationalityLabel
+WHERE {
+  ?opera wdt:P31/wdt:P279* wd:Q1344 .
+  ?opera wdt:P86 ?composer .
+  OPTIONAL { ?composer wdt:P569 ?birthDate . }
+  OPTIONAL { ?composer wdt:P570 ?deathDate . }
+  OPTIONAL { ?composer wdt:P27 ?nationality . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+}
+LIMIT 2000

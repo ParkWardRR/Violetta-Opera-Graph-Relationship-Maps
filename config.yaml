@@ -1,0 +1,108 @@
+scraping:
+  browser_contexts: 1
+  max_pages_per_domain: 1
+  navigation:
+    min_delay_ms: 2500
+    max_delay_ms: 6000
+  hard_caps:
+    max_pages_per_domain_per_run: 200
+    max_total_pages_per_run: 500
+  retry:
+    strikes_per_domain_stop: 5
+  resource_blocking:
+    block: [images, video, audio, fonts]
+    allow: [document, script, xhr, fetch]
+  cache:
+    ttl_hours: 168
+  robots_respect: true
+
+rate_limits:
+  wikidata:
+    requests_per_second: 2
+    user_agent: "ViolettaOperaGraph/1.0"
+  musicbrainz:
+    requests_per_second: 1
+    user_agent: "ViolettaOperaGraph/1.0"
+  openopus:
+    requests_per_second: 5
+  rism:
+    requests_per_second: 2
+  imslp:
+    requests_per_second: 1
+
+regional_venues:
+  enabled: true
+  regions:
+    - name: "Southern California"
+      code: "socal"
+      venues:
+        - name: "LA Opera"
+          code: "laopera"
+          official_url: "https://www.laopera.org"
+          calendar_url: "https://www.laopera.org/whats-on/by-date"
+          operabase_url: "https://www.operabase.com/la-opera-o11398/en"
+          city: "Los Angeles"
+          state: "CA"
+        - name: "Long Beach Opera"
+          code: "longbeachopera"
+          official_url: "https://www.longbeachopera.org"
+          calendar_url: "https://www.longbeachopera.org/news"
+          city: "Long Beach"
+          state: "CA"
+        - name: "Pacific Opera Project"
+          code: "pacificoperaproject"
+          official_url: "https://www.pacificoperaproject.com"
+          city: "Los Angeles"
+          state: "CA"
+        - name: "San Diego Opera"
+          code: "sandiegoopera"
+          official_url: "https://www.sdopera.org"
+          calendar_url: "https://www.sdopera.org/season/"
+          operabase_url: "https://www.operabase.com/san-diego-opera-o13281/en"
+          city: "San Diego"
+          state: "CA"
+        - name: "Mission Opera"
+          code: "missionopera"
+          official_url: "https://www.missionopera.com"
+          city: "Santa Clarita"
+          state: "CA"
+        - name: "Pacific Symphony Opera Initiative"
+          code: "pacificsymphony"
+          official_url: "https://www.pacificsymphony.org/opera-vocal-initiative"
+          city: "Costa Mesa"
+          state: "CA"
+
+    - name: "Northern California"
+      code: "norcal"
+      venues:
+        - name: "San Francisco Opera"
+          code: "sfopera"
+          official_url: "https://www.sfopera.com"
+          operabase_url: "https://www.operabase.com/san-francisco-opera-o13234/en"
+          city: "San Francisco"
+          state: "CA"
+        - name: "Opera San Jose"
+          code: "operasj"
+          official_url: "https://www.operasj.org"
+          city: "San Jose"
+          state: "CA"
+
+    - name: "New Mexico"
+      code: "nm"
+      venues:
+        - name: "Santa Fe Opera"
+          code: "santafeopera"
+          official_url: "https://www.santafeopera.org"
+          city: "Santa Fe"
+          state: "NM"
+
+    - name: "Atlanta"
+      code: "atl"
+      venues:
+        - name: "The Atlanta Opera"
+          code: "atlantaopera"
+          official_url: "https://www.atlantaopera.org"
+          calendar_url: "https://www.atlantaopera.org/tickets/"
+          operabase_url: "https://www.operabase.com/atlanta-opera-o10163/en"
+          city: "Atlanta"
+          state: "GA"

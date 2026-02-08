@@ -1,0 +1,13 @@
+SELECT ?opera ?operaLabel ?related ?relatedLabel ?relationType
+WHERE {
+  ?opera wdt:P31 wd:Q1344 .
+  {
+    ?opera wdt:P144 ?related .
+    BIND("based_on" AS ?relationType)
+  } UNION {
+    ?opera wdt:P941 ?related .
+    BIND("inspired_by" AS ?relationType)
+  }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+}
+LIMIT 2000

@@ -1,0 +1,8 @@
+{
+  "name": "opera-graph-scripts",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "umap-js": "^1.4.0"
+  }
+}
