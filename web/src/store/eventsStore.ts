@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import type { PerformanceEvent, CustomSource } from '@/types/graph'
 
-const API_BASE = '/api'
+const API_BASE = `${import.meta.env.BASE_URL}api`
 
 interface EventsState {
   events: PerformanceEvent[]
