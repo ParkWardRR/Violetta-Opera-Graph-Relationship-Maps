@@ -66,11 +66,11 @@ function ForceAtlas2Layout() {
 
     const layout = new FA2Layout(graph, {
       settings: {
-        gravity: 1,
-        scalingRatio: 10,
+        gravity: 2,
+        scalingRatio: 8,
         barnesHutOptimize: true,
         barnesHutTheta: 0.5,
-        slowDown: 5,
+        slowDown: 3,
         adjustSizes: true,
       },
     })
