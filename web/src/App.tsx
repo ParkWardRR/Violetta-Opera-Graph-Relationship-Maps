@@ -13,12 +13,14 @@ import { DiscoverPage } from '@/components/DiscoverPage'
 import { EventsView } from '@/components/EventsView'
 import { ScraperPage } from '@/components/ScraperPage'
 import { NowPlaying } from '@/components/NowPlaying'
+import MoodLanding from '@/features/mood/MoodLanding'
 import { usePreferencesStore } from '@/store/preferencesStore'
 import { useResolvedTheme } from '@/lib/useResolvedTheme'
 
-type Tab = 'network' | 'timeline' | 'discover' | 'events'
+type Tab = 'moods' | 'network' | 'timeline' | 'discover' | 'events'
 
 const TAB_ICONS: Record<Tab, string> = {
+  moods: '\u2661',
   network: '\u25C9',
   timeline: '\u2014',
   discover: '\u2606',
@@ -38,7 +40,7 @@ function GearIcon() {
 
 export default function App() {
   const { loadGraph, loading, error } = useGraphStore()
-  const [activeTab, setActiveTab] = useState<Tab>('network')
+  const [activeTab, setActiveTab] = useState<Tab>('moods')
   const [page, setPage] = useState<'main' | 'preferences' | 'admin' | 'scraper'>('main')
   const showEraLegend = usePreferencesStore((s) => s.showEraLegend)
 
@@ -107,7 +109,7 @@ export default function App() {
         </div>
 
         <div className="absolute left-1/2 -translate-x-1/2 flex gap-0.5 p-1 rounded-full bg-[color:var(--c-panel-2)]/50 backdrop-blur-sm border border-[color:var(--c-border)] shadow-inner">
-          {(['network', 'timeline', 'discover', 'events'] as const).map((tab) => (
+          {(['moods', 'network', 'timeline', 'discover', 'events'] as const).map((tab) => (
             <button
               key={tab}
               className={`px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
@@ -118,7 +120,7 @@ export default function App() {
               onClick={() => setActiveTab(tab)}
             >
               <span className="text-[10px] opacity-60">{TAB_ICONS[tab]}</span>
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab === 'moods' ? 'Moods' : tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </div>
@@ -158,6 +160,14 @@ export default function App() {
           <div className="flex-1">
             <EventsView />
           </div>
+        ) : activeTab === 'moods' ? (
+          <>
+            <div className="flex-1 relative">
+              <MoodLanding resolvedTheme={resolvedTheme} />
+              <NowPlaying onViewAll={() => setActiveTab('events')} />
+            </div>
+            <NodeDetail />
+          </>
         ) : (
           <>
             <div className="flex-1 relative">
