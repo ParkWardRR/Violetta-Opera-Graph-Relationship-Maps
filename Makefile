@@ -11,7 +11,7 @@ endif
 .PHONY: setup setup-dirs setup-swift setup-go setup-web setup-scripts \
         fetch fetch-apis scrape-regional process \
         embed run-embeddings compute-projections \
-        build dev test-web all clean \
+        build dev dev-daemon dev-stop dev-status dev-logs test-web all clean \
         scrape-socal scrape-norcal scrape-nm scrape-atl scrape-regional-all
 
 # ── Setup ──────────────────────────────────────────────────────────────
@@ -88,7 +88,58 @@ build:
 	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run build
 
 dev:
-	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run dev -- --host 127.0.0.1 --port 5173
+	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run dev -- --host 127.0.0.1 --port 5173 --strictPort
+
+# Start the Vite dev server in the background (useful if you don't want to keep a terminal open).
+# Logs and PID go into `.context/`.
+dev-daemon:
+	@set -e; \
+	  PID_FILE="$(REPO_DIR)/.context/vite-dev.pid"; \
+	  LOG_FILE="$(REPO_DIR)/.context/vite-dev.log"; \
+	  mkdir -p "$(REPO_DIR)/.context"; \
+	  if [ -f "$$PID_FILE" ] && kill -0 "$$(cat "$$PID_FILE")" >/dev/null 2>&1; then \
+	    echo "Vite dev server already running (pid=$$(cat "$$PID_FILE"))."; \
+	    echo "Open: http://127.0.0.1:5173/"; \
+	    exit 0; \
+	  fi; \
+	  rm -f "$$PID_FILE"; \
+	  echo "Starting Vite dev server on http://127.0.0.1:5173/"; \
+	  (cd "$(REPO_DIR)/web" && VITE_DATA_DIR="$(STATIC_DIR)/data/processed" nohup npm run dev -- --host 127.0.0.1 --port 5173 --strictPort >"$$LOG_FILE" 2>&1 & echo $$! >"$$PID_FILE"); \
+	  sleep 0.2; \
+	  if ! kill -0 "$$(cat "$$PID_FILE")" >/dev/null 2>&1; then \
+	    echo "Dev server failed to start. See $$LOG_FILE"; \
+	    exit 1; \
+	  fi; \
+	  echo "Started (pid=$$(cat "$$PID_FILE")). Logs: $$LOG_FILE"
+
+dev-stop:
+	@set -e; \
+	  PID_FILE="$(REPO_DIR)/.context/vite-dev.pid"; \
+	  if [ ! -f "$$PID_FILE" ]; then echo "No pid file at $$PID_FILE"; exit 0; fi; \
+	  PID="$$(cat "$$PID_FILE")"; \
+	  if kill -0 "$$PID" >/dev/null 2>&1; then \
+	    kill "$$PID" >/dev/null 2>&1 || true; \
+	    echo "Stopped dev server (pid=$$PID)"; \
+	  else \
+	    echo "Dev server not running (stale pid=$$PID)"; \
+	  fi; \
+	  rm -f "$$PID_FILE"
+
+dev-status:
+	@set -e; \
+	  PID_FILE="$(REPO_DIR)/.context/vite-dev.pid"; \
+	  if [ -f "$$PID_FILE" ] && kill -0 "$$(cat "$$PID_FILE")" >/dev/null 2>&1; then \
+	    echo "Dev server: running (pid=$$(cat "$$PID_FILE"))"; \
+	    echo "URL: http://127.0.0.1:5173/"; \
+	  else \
+	    echo "Dev server: not running"; \
+	  fi
+
+dev-logs:
+	@set -e; \
+	  LOG_FILE="$(REPO_DIR)/.context/vite-dev.log"; \
+	  if [ ! -f "$$LOG_FILE" ]; then echo "No log file at $$LOG_FILE"; exit 0; fi; \
+	  tail -n 120 "$$LOG_FILE"
 
 # End-to-end smoke test of the web UI using Playwright-Go.
 # Spins up the Vite dev server temporarily, then runs `go test` in ./e2e.
