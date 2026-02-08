@@ -73,12 +73,11 @@ export default function App() {
 
       {/* Main Content */}
       <div className="flex-1 relative">
-        <div className={activeTab === 'network' ? 'h-full' : 'hidden'}>
+        {activeTab === 'network' ? (
           <NetworkView />
-        </div>
-        <div className={activeTab === 'timeline' ? 'h-full' : 'hidden'}>
+        ) : (
           <TimelineView />
-        </div>
+        )}
         <NodeDetail />
       </div>
     </div>

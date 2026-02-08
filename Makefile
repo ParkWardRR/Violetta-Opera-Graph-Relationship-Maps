@@ -11,7 +11,7 @@ endif
 .PHONY: setup setup-dirs setup-swift setup-go setup-web setup-scripts \
         fetch fetch-apis scrape-regional process \
         embed run-embeddings compute-projections \
-        build dev all clean \
+        build dev test-web all clean \
         scrape-socal scrape-norcal scrape-nm scrape-atl scrape-regional-all
 
 # ── Setup ──────────────────────────────────────────────────────────────
@@ -88,7 +88,27 @@ build:
 	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run build
 
 dev:
-	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run dev
+	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run dev -- --host 127.0.0.1 --port 5173
+
+# End-to-end smoke test of the web UI using Playwright-Go.
+# Spins up the Vite dev server temporarily, then runs `go test` in ./e2e.
+test-web:
+	@set -e; \
+	  export VITE_DATA_DIR="$(STATIC_DIR)/data/processed"; \
+	  ARTIFACTS_DIR="$(REPO_DIR)/.context/playwright"; \
+	  mkdir -p "$$ARTIFACTS_DIR"; \
+	  echo "Starting Vite dev server (artifacts: $$ARTIFACTS_DIR)"; \
+	  (cd "$(REPO_DIR)/web" && npm run dev -- --host 127.0.0.1 --port 5173 --strictPort >"$$ARTIFACTS_DIR/vite-dev.log" 2>&1 & echo $$! >"$$ARTIFACTS_DIR/vite-dev.pid"); \
+	  PID=$$(cat "$$ARTIFACTS_DIR/vite-dev.pid"); \
+	  trap 'kill $$PID >/dev/null 2>&1 || true' EXIT; \
+	  i=0; \
+	  until curl -fsS http://127.0.0.1:5173/ >/dev/null 2>&1; do \
+	    i=$$((i+1)); \
+	    if [ $$i -gt 80 ]; then echo "Timed out waiting for dev server. See $$ARTIFACTS_DIR/vite-dev.log"; exit 1; fi; \
+	    sleep 0.25; \
+	  done; \
+	  echo "Running Playwright-Go tests..."; \
+	  (cd "$(REPO_DIR)/e2e" && ARTIFACTS_DIR="$$ARTIFACTS_DIR" VIOLETTA_BASE_URL="http://127.0.0.1:5173/" go test ./... -v)
 
 # ── All ────────────────────────────────────────────────────────────────
 

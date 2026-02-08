@@ -100,10 +100,10 @@ function GraphFilters() {
       let visible = true
 
       if (composerFilter.length > 0) {
-        if (attrs.type === 'opera' && attrs.composerId && !composerFilter.includes(attrs.composerId)) {
+        if (attrs.entityType === 'opera' && attrs.composerId && !composerFilter.includes(attrs.composerId)) {
           visible = false
         }
-        if (attrs.type === 'composer' && !composerFilter.includes(node)) {
+        if (attrs.entityType === 'composer' && !composerFilter.includes(node)) {
           visible = false
         }
       }
