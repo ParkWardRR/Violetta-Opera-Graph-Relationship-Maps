@@ -4,6 +4,7 @@ import NetworkView from '@/features/graph/NetworkView'
 import TimelineView from '@/features/timeline/TimelineView'
 import FilterBar from '@/components/FilterBar'
 import NodeDetail from '@/components/NodeDetail'
+import ExportMenu from '@/components/ExportMenu'
 
 type Tab = 'network' | 'timeline'
 
@@ -64,7 +65,7 @@ export default function App() {
             Timeline
           </button>
         </div>
-        <div className="w-32" /> {/* Spacer for balance */}
+        <ExportMenu />
       </div>
 
       {/* Filter Bar */}

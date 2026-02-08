@@ -33,12 +33,12 @@
 - [x] Node detail panel
 - [x] ForceAtlas2 web worker layout
 - [x] Composer multi-select filter
-- [ ] Export (PNG/SVG/JSON)
+- [x] Export (PNG/SVG/JSON)
 - [ ] shadcn/ui component polish
 
 ## Phase 4: Core ML Embeddings
 - [x] SPM package (embeddings/Package.swift)
-- [ ] swift-embeddings integration (all-MiniLM-L6-v2) - building deps
+- [ ] swift-embeddings integration (all-MiniLM-L6-v2) - deps build, needs runtime test
 - [ ] Batch embedding + cosine similarity
 - [x] UMAP projection script (scripts/compute-projections.mjs)
 - [ ] Merge projections into graph.json
@@ -56,7 +56,7 @@
 - [x] End-to-end build validation (all 4 components)
 - [x] Real graph.json (88 nodes, 53 edges from Wikidata + Open Opus)
 - [x] Verify linked selection with real data
-- [x] Final README updates
+- [x] README with badges + mermaid diagrams
 - [ ] Code signing documentation (for later)
 
 ## Future
