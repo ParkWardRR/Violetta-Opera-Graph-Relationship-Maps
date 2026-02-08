@@ -51,18 +51,18 @@ export default function FilterBar() {
     }
   }
 
-  const nodeCount = rawData?.nodes.length ?? 0
-  const edgeCount = rawData?.edges.length ?? 0
+  const operaCount = useMemo(() => rawData?.nodes.filter((n) => n.attributes.type === 'opera').length ?? 0, [rawData])
+  const composerCount = useMemo(() => rawData?.nodes.filter((n) => n.attributes.type === 'composer').length ?? 0, [rawData])
 
   return (
-    <div className="flex items-center gap-4 px-4 py-2 bg-slate-800 border-b border-slate-700 overflow-x-auto">
+    <div className="flex items-center gap-4 px-4 py-2 bg-[color:var(--c-panel)] border-b border-[color:var(--c-border)] overflow-x-auto">
       {/* Search */}
       <input
         type="text"
         placeholder="Search operas..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="bg-slate-900 text-slate-200 text-sm px-3 py-1.5 rounded border border-slate-600 focus:border-blue-500 focus:outline-none w-48"
+        className="bg-[color:var(--c-panel-2)] text-[color:var(--c-text)] placeholder:text-[color:var(--c-muted-2)] text-sm px-3 py-1.5 rounded border border-[color:var(--c-border)] focus:border-[color:var(--c-accent)] focus:outline-none w-48"
       />
 
       {/* Composer multi-select */}
@@ -71,24 +71,24 @@ export default function FilterBar() {
           onClick={() => setComposerDropdownOpen(!composerDropdownOpen)}
           className={`px-3 py-1.5 text-sm rounded border transition-colors ${
             composerFilter.length > 0
-              ? 'border-blue-500 text-blue-300 bg-blue-900/30'
-              : 'border-slate-600 text-slate-400 hover:border-slate-400'
+              ? 'border-[color:var(--c-accent)] text-[color:var(--c-text)] bg-[color:var(--c-panel-2)]'
+              : 'border-[color:var(--c-border)] text-[color:var(--c-muted)] hover:text-[color:var(--c-text)]'
           }`}
         >
           Composers{composerFilter.length > 0 ? ` (${composerFilter.length})` : ''}
         </button>
         {composerDropdownOpen && (
-          <div className="absolute top-full left-0 mt-1 bg-slate-800 border border-slate-600 rounded shadow-xl z-50 max-h-64 overflow-y-auto w-56">
+          <div className="absolute top-full left-0 mt-1 bg-[color:var(--c-panel)] border border-[color:var(--c-border)] rounded shadow-[var(--shadow-panel)] z-50 max-h-64 overflow-y-auto w-56">
             {composers.map((c) => (
               <label
                 key={c.key}
-                className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-300 hover:bg-slate-700 cursor-pointer"
+                className="flex items-center gap-2 px-3 py-1.5 text-sm text-[color:var(--c-text)] hover:bg-[color:var(--c-panel-2)] cursor-pointer"
               >
                 <input
                   type="checkbox"
                   checked={composerFilter.includes(c.key)}
                   onChange={() => toggleComposer(c.key)}
-                  className="accent-blue-500"
+                  className="accent-[color:var(--c-accent)]"
                 />
                 {c.attributes.label}
               </label>
@@ -96,7 +96,7 @@ export default function FilterBar() {
             {composerFilter.length > 0 && (
               <button
                 onClick={() => setComposerFilter([])}
-                className="w-full px-3 py-1.5 text-xs text-slate-400 hover:text-white border-t border-slate-600"
+                className="w-full px-3 py-1.5 text-xs text-[color:var(--c-muted)] hover:text-[color:var(--c-text)] border-t border-[color:var(--c-border)]"
               >
                 Clear composers
               </button>
@@ -114,7 +114,7 @@ export default function FilterBar() {
             className={`px-2 py-1 text-xs rounded-full border transition-colors ${
               eraFilter.includes(era)
                 ? 'border-transparent text-white'
-                : 'border-slate-600 text-slate-400 hover:border-slate-400'
+                : 'border-[color:var(--c-border)] text-[color:var(--c-muted)] hover:text-[color:var(--c-text)]'
             }`}
             style={eraFilter.includes(era) ? { backgroundColor: ERA_COLORS[era] } : {}}
           >
@@ -125,7 +125,7 @@ export default function FilterBar() {
 
       {/* Decade range */}
       <div className="flex items-center gap-2 flex-shrink-0">
-        <span className="text-xs text-slate-400">{decadeRange[0]}</span>
+        <span className="text-xs text-[color:var(--c-muted)]">{decadeRange[0]}</span>
         <input
           type="range"
           min={1600}
@@ -144,20 +144,20 @@ export default function FilterBar() {
           onChange={(e) => setDecadeRange([decadeRange[0], parseInt(e.target.value)])}
           className="w-20"
         />
-        <span className="text-xs text-slate-400">{decadeRange[1]}</span>
+        <span className="text-xs text-[color:var(--c-muted)]">{decadeRange[1]}</span>
       </div>
 
       {/* Reset */}
       <button
         onClick={resetFilters}
-        className="px-2 py-1 text-xs text-slate-400 hover:text-white border border-slate-600 rounded"
+        className="px-2 py-1 text-xs text-[color:var(--c-muted)] hover:text-[color:var(--c-text)] border border-[color:var(--c-border)] rounded bg-[color:var(--c-panel-2)]"
       >
         Reset
       </button>
 
       {/* Stats */}
-      <div className="ml-auto text-xs text-slate-500 flex-shrink-0">
-        {nodeCount} nodes / {edgeCount} edges
+      <div className="ml-auto text-xs text-[color:var(--c-muted-2)] flex-shrink-0">
+        {operaCount} operas, {composerCount} composers
       </div>
     </div>
   )

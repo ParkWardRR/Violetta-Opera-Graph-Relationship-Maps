@@ -5,13 +5,16 @@ import FA2Layout from 'graphology-layout-forceatlas2/worker'
 import { useGraphStore } from '@/store/graphStore'
 import { useSelectionStore } from '@/store/selectionStore'
 import { useFilterStore } from '@/store/filterStore'
+import { usePreferencesStore } from '@/store/preferencesStore'
+import type { ResolvedTheme } from '@/lib/theme'
 
-function GraphEvents() {
+function GraphEvents({ resolvedTheme }: { resolvedTheme: ResolvedTheme }) {
   const sigma = useSigma()
   const registerEvents = useRegisterEvents()
   const { setSelected, setHovered } = useSelectionStore()
   const selectedNodeKeys = useSelectionStore((s) => s.selectedNodeKeys)
   const selectionSource = useSelectionStore((s) => s.selectionSource)
+  const dimColor = resolvedTheme === 'dark' ? '#243041' : '#cbd5e1'
 
   useEffect(() => {
     registerEvents({
@@ -42,13 +45,13 @@ function GraphEvents() {
         graph.setNodeAttribute(node, 'baseColor', baseColor)
       }
       if (selectedNodeKeys.size > 0 && !isSelected) {
-        graph.setNodeAttribute(node, 'color', '#333')
+        graph.setNodeAttribute(node, 'color', dimColor)
       } else {
         graph.setNodeAttribute(node, 'color', baseColor)
       }
     })
     sigma.refresh()
-  }, [selectedNodeKeys, selectionSource, sigma])
+  }, [selectedNodeKeys, selectionSource, sigma, dimColor])
 
   return null
 }
@@ -138,31 +141,50 @@ function GraphFilters() {
   return null
 }
 
-export default function NetworkView() {
+export default function NetworkView({ resolvedTheme }: { resolvedTheme: ResolvedTheme }) {
   const graph = useGraphStore((s) => s.graph)
+  const showEdgeLabels = usePreferencesStore((s) => s.showEdgeLabels)
 
   if (!graph) {
-    return <div className="flex items-center justify-center h-full text-slate-400">Loading graph...</div>
+    return <div className="flex items-center justify-center h-full text-[color:var(--c-muted)]">Loading graph...</div>
   }
+
+  const palette = resolvedTheme === 'dark'
+    ? {
+        bg: '#0b1220',
+        label: '#e2e8f0',
+        edgeLabel: '#94a3b8',
+        edge: '#334155',
+      }
+    : {
+        bg: '#f8fafc',
+        label: '#0f172a',
+        edgeLabel: '#475569',
+        edge: '#cbd5e1',
+      }
 
   return (
     <SigmaContainer
       graph={graph}
-      style={{ height: '100%', width: '100%', background: '#0f172a' }}
+      style={{ height: '100%', width: '100%', background: palette.bg }}
       settings={{
         defaultNodeColor: '#6c757d',
-        defaultEdgeColor: '#334155',
+        defaultEdgeColor: palette.edge,
         defaultEdgeType: 'line',
-        labelColor: { color: '#e2e8f0' },
-        labelFont: 'Inter, system-ui, sans-serif',
+        labelColor: { color: palette.label },
+        labelFont: 'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif',
         labelSize: 12,
         labelRenderedSizeThreshold: 8,
         nodeProgramClasses: {},
-        enableEdgeEvents: false,
+        enableEdgeEvents: showEdgeLabels,
+        edgeLabelColor: { color: palette.edgeLabel },
+        edgeLabelFont: 'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif',
+        edgeLabelSize: 10,
+        renderEdgeLabels: showEdgeLabels,
         zIndex: true,
       }}
     >
-      <GraphEvents />
+      <GraphEvents resolvedTheme={resolvedTheme} />
       <ForceAtlas2Layout />
       <GraphFilters />
     </SigmaContainer>

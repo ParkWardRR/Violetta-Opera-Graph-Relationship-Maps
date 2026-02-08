@@ -27,7 +27,13 @@ export const useGraphStore = create<GraphState>((set) => ({
 
       const graph = new Graph({ type: 'mixed', multi: false, allowSelfLoops: false })
 
+      // Filter out nodes with broken data (unresolved Wikidata Q-IDs or empty labels)
+      const validNodeKeys = new Set<string>()
       for (const node of data.nodes) {
+        const label = node.attributes.label
+        if (!label || /^Q\d+$/.test(label)) continue
+        validNodeKeys.add(node.key)
+
         // Sigma uses node attribute `type` to select a render program (e.g. "circle").
         // Our domain model also uses `type` ("composer", "opera"), which causes Sigma to crash.
         const attrs = {
@@ -38,13 +44,21 @@ export const useGraphStore = create<GraphState>((set) => ({
         graph.addNode(node.key, attrs)
       }
 
+      // Filter data.nodes for rawData too
+      data.nodes = data.nodes.filter((n) => validNodeKeys.has(n.key))
+
       for (const edge of data.edges) {
         try {
+          // Skip edges pointing to/from filtered nodes or empty targets
+          if (!edge.source || !edge.target) continue
+          if (!validNodeKeys.has(edge.source) || !validNodeKeys.has(edge.target)) continue
+
           // Sigma uses edge attribute `type` to pick a render program (e.g. "line").
           // Our domain model also uses `type` ("composed_by", ...), which causes Sigma to crash.
           const attrs = {
             ...edge.attributes,
             edgeType: edge.attributes.type,
+            label: edge.attributes.type.replace(/_/g, ' '),
             type: 'line',
             key: edge.key,
           }
@@ -55,6 +69,9 @@ export const useGraphStore = create<GraphState>((set) => ({
           // Skip duplicate edges or missing nodes
         }
       }
+
+      // Filter edges in rawData too
+      data.edges = data.edges.filter((e) => e.source && e.target && validNodeKeys.has(e.source) && validNodeKeys.has(e.target))
 
       set({ graph, rawData: data, loading: false })
     } catch (err) {

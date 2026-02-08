@@ -15,9 +15,17 @@ export default defineConfig({
   },
   publicDir: dataDir,
   server: {
+    host: '0.0.0.0',
+    allowedHosts: true,
     port: 5173,
     fs: {
       allow: [__dirname, path.resolve(__dirname, '..'), dataDir],
+    },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+      },
     },
   },
 })

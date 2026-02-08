@@ -12,7 +12,8 @@ endif
         fetch fetch-apis scrape-regional process \
         embed run-embeddings compute-projections \
         build dev dev-daemon dev-stop dev-status dev-logs test-web all clean \
-        scrape-socal scrape-norcal scrape-nm scrape-atl scrape-regional-all
+        scrape-socal scrape-norcal scrape-nm scrape-atl scrape-regional-all \
+        serve server
 
 # ── Setup ──────────────────────────────────────────────────────────────
 
@@ -88,7 +89,7 @@ build:
 	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run build
 
 dev:
-	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run dev -- --host 127.0.0.1 --port 5173 --strictPort
+	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run dev -- --host 0.0.0.0 --port 5173 --strictPort
 
 # Start the Vite dev server in the background (useful if you don't want to keep a terminal open).
 # Logs and PID go into `.context/`.
@@ -103,8 +104,10 @@ dev-daemon:
 	    exit 0; \
 	  fi; \
 	  rm -f "$$PID_FILE"; \
-	  echo "Starting Vite dev server on http://127.0.0.1:5173/"; \
-	  (cd "$(REPO_DIR)/web" && VITE_DATA_DIR="$(STATIC_DIR)/data/processed" nohup npm run dev -- --host 127.0.0.1 --port 5173 --strictPort >"$$LOG_FILE" 2>&1 & echo $$! >"$$PID_FILE"); \
+	  echo "Starting Vite dev server on:"; \
+	  echo "  - http://127.0.0.1:5173/"; \
+	  echo "  - http://localhost:5173/"; \
+	  (cd "$(REPO_DIR)/web" && VITE_DATA_DIR="$(STATIC_DIR)/data/processed" nohup npm run dev -- --host 0.0.0.0 --port 5173 --strictPort >"$$LOG_FILE" 2>&1 & echo $$! >"$$PID_FILE"); \
 	  sleep 0.2; \
 	  if ! kill -0 "$$(cat "$$PID_FILE")" >/dev/null 2>&1; then \
 	    echo "Dev server failed to start. See $$LOG_FILE"; \
@@ -149,7 +152,7 @@ test-web:
 	  ARTIFACTS_DIR="$(REPO_DIR)/.context/playwright"; \
 	  mkdir -p "$$ARTIFACTS_DIR"; \
 	  echo "Starting Vite dev server (artifacts: $$ARTIFACTS_DIR)"; \
-	  (cd "$(REPO_DIR)/web" && npm run dev -- --host 127.0.0.1 --port 5173 --strictPort >"$$ARTIFACTS_DIR/vite-dev.log" 2>&1 & echo $$! >"$$ARTIFACTS_DIR/vite-dev.pid"); \
+	  (cd "$(REPO_DIR)/web" && npm run dev -- --host 0.0.0.0 --port 5173 --strictPort >"$$ARTIFACTS_DIR/vite-dev.log" 2>&1 & echo $$! >"$$ARTIFACTS_DIR/vite-dev.pid"); \
 	  PID=$$(cat "$$ARTIFACTS_DIR/vite-dev.pid"); \
 	  trap 'kill $$PID >/dev/null 2>&1 || true' EXIT; \
 	  i=0; \
@@ -161,10 +164,20 @@ test-web:
 	  echo "Running Playwright-Go tests..."; \
 	  (cd "$(REPO_DIR)/e2e" && ARTIFACTS_DIR="$$ARTIFACTS_DIR" VIOLETTA_BASE_URL="http://127.0.0.1:5173/" go test ./... -v)
 
+# ── Serve ──────────────────────────────────────────────────────────────
+
+# Start the Go server on port 8080 serving both the built web UI and the API.
+# Run 'make build' first, or use 'make serve' which does both.
+server:
+	cd $(REPO_DIR)/scraper && go run . --server --config $(REPO_DIR)/config.yaml --data-dir $(STATIC_DIR) --static $(REPO_DIR)/web/dist
+
+# Build the web UI, then start the server.  One command to run everything.
+serve: build server
+
 # ── All ────────────────────────────────────────────────────────────────
 
 all: setup fetch embed build
-	@echo "Pipeline complete. Run 'make dev' to start the web UI."
+	@echo "Pipeline complete. Run 'make serve' to start the app on http://localhost:8080"
 
 # ── Clean ──────────────────────────────────────────────────────────────
 

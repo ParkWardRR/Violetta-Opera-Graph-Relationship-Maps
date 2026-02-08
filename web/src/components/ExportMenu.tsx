@@ -44,21 +44,26 @@ export default function ExportMenu() {
 
       const nodeMap = new Map(nodes.map((n) => [n.key, n]))
 
+      const theme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'
+      const bg = theme === 'light' ? '#ffffff' : '#0f172a'
+      const edgeStroke = theme === 'light' ? '#cbd5e1' : '#334155'
+      const text = theme === 'light' ? '#0f172a' : '#e2e8f0'
+
       let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${minX - pad} ${minY - pad} ${w} ${h}" width="${w}" height="${h}">\n`
-      svg += `<rect x="${minX - pad}" y="${minY - pad}" width="${w}" height="${h}" fill="#0f172a"/>\n`
+      svg += `<rect x="${minX - pad}" y="${minY - pad}" width="${w}" height="${h}" fill="${bg}"/>\n`
 
       for (const edge of edges) {
         const s = nodeMap.get(edge.source)
         const t = nodeMap.get(edge.target)
         if (s && t) {
-          svg += `<line x1="${s.attributes.x}" y1="${s.attributes.y}" x2="${t.attributes.x}" y2="${t.attributes.y}" stroke="#334155" stroke-width="0.5"/>\n`
+          svg += `<line x1="${s.attributes.x}" y1="${s.attributes.y}" x2="${t.attributes.x}" y2="${t.attributes.y}" stroke="${edgeStroke}" stroke-width="0.5"/>\n`
         }
       }
 
       for (const node of nodes) {
         const { x, y, size, color, label } = node.attributes
         svg += `<circle cx="${x}" cy="${y}" r="${size}" fill="${color}"/>\n`
-        svg += `<text x="${x}" y="${y - size - 2}" fill="#e2e8f0" font-size="4" text-anchor="middle" font-family="Inter, sans-serif">${label}</text>\n`
+        svg += `<text x="${x}" y="${y - size - 2}" fill="${text}" font-size="4" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif">${label}</text>\n`
       }
 
       svg += `</svg>`
@@ -96,27 +101,27 @@ export default function ExportMenu() {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setOpen(!open)}
-        className="px-3 py-1.5 text-sm text-slate-400 hover:text-white border border-slate-600 rounded transition-colors"
+        className="px-3 py-1.5 text-sm text-[color:var(--c-muted)] hover:text-[color:var(--c-text)] border border-[color:var(--c-border)] bg-[color:var(--c-panel-2)] rounded transition-colors"
       >
         Export
       </button>
       {open && (
-        <div className="absolute right-0 top-full mt-1 bg-slate-800 border border-slate-600 rounded shadow-xl z-50 min-w-36">
+        <div className="absolute right-0 top-full mt-1 bg-[color:var(--c-panel)] border border-[color:var(--c-border)] rounded shadow-[var(--shadow-panel)] z-50 min-w-36 overflow-hidden">
           <button
             onClick={exportPNG}
-            className="w-full px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 text-left"
+            className="w-full px-4 py-2 text-sm text-[color:var(--c-text)] hover:bg-[color:var(--c-panel-2)] text-left"
           >
             PNG Screenshot
           </button>
           <button
             onClick={exportSVG}
-            className="w-full px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 text-left"
+            className="w-full px-4 py-2 text-sm text-[color:var(--c-text)] hover:bg-[color:var(--c-panel-2)] text-left"
           >
             SVG Vector
           </button>
           <button
             onClick={exportJSON}
-            className="w-full px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 text-left border-t border-slate-700"
+            className="w-full px-4 py-2 text-sm text-[color:var(--c-text)] hover:bg-[color:var(--c-panel-2)] text-left border-t border-[color:var(--c-border)]"
           >
             Graph JSON
           </button>

@@ -16,9 +16,11 @@ Then open:
 
 ```text
 http://127.0.0.1:5173/
+http://localhost:5173/
 ```
 
 If your browser says it "can’t connect", the dev server likely isn’t running anymore (closing the terminal stops it).
+If you're trying to access the dev server from another device on your LAN, make sure you're using your Mac's LAN IP/hostname (not `127.0.0.1`).
 Use the daemon targets to keep it running in the background:
 
 ```bash
