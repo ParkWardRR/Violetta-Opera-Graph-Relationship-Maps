@@ -1,6 +1,21 @@
 @import "tailwindcss";
 
 :root {
+  /* Default to dark to avoid a light flash on first paint. */
+  color-scheme: dark;
+
+  --c-bg: linear-gradient(to bottom right, #0b1220, #0f172a);
+  --c-panel: #111827;
+  --c-panel-2: #1e293b;
+  --c-border: rgba(255, 255, 255, 0.1);
+  --c-text: #e2e8f0;
+  --c-muted: #94a3b8;
+  --c-muted-2: #64748b;
+  --c-accent: #3b82f6;
+  --c-accent-2: #2563eb;
+  --c-danger: #f87171;
+  --shadow-panel: 0 12px 32px rgba(0, 0, 0, 0.45);
+
   --color-baroque: #2ecc71;
   --color-classical: #3498db;
   --color-early-romantic: #9b59b6;
@@ -9,11 +24,28 @@
   --color-contemporary: #1abc9c;
 }
 
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --c-bg: #f8fafc;
+  --c-panel: #ffffff;
+  --c-panel-2: #f1f5f9;
+  --c-border: #e2e8f0;
+  --c-text: #0f172a;
+  --c-muted: #475569;
+  --c-muted-2: #64748b;
+  --c-accent: #2563eb;
+  --c-accent-2: #1d4ed8;
+  --c-danger: #dc2626;
+  --shadow-panel: 0 12px 32px rgba(15, 23, 42, 0.12);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+  background: var(--c-bg);
+  color: var(--c-text);
 }
 
 #root {

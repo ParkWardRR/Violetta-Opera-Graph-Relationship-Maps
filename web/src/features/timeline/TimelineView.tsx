@@ -6,6 +6,7 @@ import { useGraphStore } from '@/store/graphStore'
 import { useSelectionStore } from '@/store/selectionStore'
 import { useFilterStore } from '@/store/filterStore'
 import { ERA_COLORS } from '@/types/graph'
+import type { ResolvedTheme } from '@/lib/theme'
 
 type ViewMode = 'scatter' | 'decades'
 
@@ -16,7 +17,7 @@ function hexToRGB(hex: string): [number, number, number, number] {
   return [r, g, b, 255]
 }
 
-export default function TimelineView() {
+export default function TimelineView({ resolvedTheme }: { resolvedTheme: ResolvedTheme }) {
   const rawData = useGraphStore((s) => s.rawData)
   const selectedNodeKeys = useSelectionStore((s) => s.selectedNodeKeys)
   const { setSelected } = useSelectionStore()
@@ -89,17 +90,29 @@ export default function TimelineView() {
     zoom: 1,
   }
 
+  const palette = resolvedTheme === 'dark'
+    ? { bg: '#0b1220', tooltipBg: '#111827', tooltipText: '#e2e8f0' }
+    : { bg: '#f8fafc', tooltipBg: '#ffffff', tooltipText: '#0f172a' }
+
   return (
     <div className="relative h-full w-full">
       <div className="absolute top-3 right-3 z-10 flex gap-1">
         <button
-          className={`px-3 py-1 text-xs rounded ${viewMode === 'scatter' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300'}`}
+          className={`px-3 py-1 text-xs rounded border border-[color:var(--c-border)] transition-colors ${
+            viewMode === 'scatter'
+              ? 'bg-[color:var(--c-accent)] text-white border-transparent'
+              : 'bg-[color:var(--c-panel)] text-[color:var(--c-muted)] hover:text-[color:var(--c-text)]'
+          }`}
           onClick={() => setViewMode('scatter')}
         >
           Scatter
         </button>
         <button
-          className={`px-3 py-1 text-xs rounded ${viewMode === 'decades' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300'}`}
+          className={`px-3 py-1 text-xs rounded border border-[color:var(--c-border)] transition-colors ${
+            viewMode === 'decades'
+              ? 'bg-[color:var(--c-accent)] text-white border-transparent'
+              : 'bg-[color:var(--c-panel)] text-[color:var(--c-muted)] hover:text-[color:var(--c-text)]'
+          }`}
           onClick={() => setViewMode('decades')}
         >
           Decades
@@ -110,18 +123,19 @@ export default function TimelineView() {
         controller={true}
         layers={[layer]}
         views={new OrthographicView({ id: 'ortho' })}
-        style={{ background: '#0f172a' }}
+        style={{ background: palette.bg }}
         getTooltip={({ object }: { object?: (typeof operaNodes)[0] }) => {
           if (!object) return null
           const a = object.attributes
           return {
             text: `${a.label}\n${a.composerName ?? ''} (${a.premiereYear ?? '?'})\n${a.eraBucket ?? ''}`,
             style: {
-              backgroundColor: '#1e293b',
-              color: '#e2e8f0',
+              backgroundColor: palette.tooltipBg,
+              color: palette.tooltipText,
               fontSize: '12px',
               padding: '8px',
               borderRadius: '4px',
+              boxShadow: 'var(--shadow-panel)',
             },
           }
         }}

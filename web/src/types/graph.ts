@@ -62,3 +62,37 @@ export const ERA_COLORS: Record<string, string> = {
   '20th Century': '#f39c12',
   'Contemporary': '#1abc9c',
 }
+
+export const ERA_RANGES: Record<string, string> = {
+  'Baroque': 'before 1750',
+  'Classical': '1750 \u2013 1820',
+  'Early Romantic': '1820 \u2013 1850',
+  'Late Romantic': '1850 \u2013 1910',
+  '20th Century': '1910 \u2013 1975',
+  'Contemporary': 'after 1975',
+}
+
+export const ERA_ORDER = ['Baroque', 'Classical', 'Early Romantic', 'Late Romantic', '20th Century', 'Contemporary']
+
+export interface PerformanceEvent {
+  event_id: string
+  venue_code: string
+  region: string
+  opera_title: string
+  composer: string
+  dates: string[]
+  venue_name: string
+  city: string
+  state: string
+  source_url: string
+  scraped_at: string
+  matched_opera_key?: string
+  match_confidence?: number
+}
+
+export interface CustomSource {
+  url: string
+  label: string
+  scraped_at: string
+  event_count: number
+}
