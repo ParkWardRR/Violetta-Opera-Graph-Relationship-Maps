@@ -28,14 +28,28 @@ export const useGraphStore = create<GraphState>((set) => ({
       const graph = new Graph({ type: 'mixed', multi: false, allowSelfLoops: false })
 
       for (const node of data.nodes) {
-        graph.addNode(node.key, node.attributes)
+        // Sigma uses node attribute `type` to select a render program (e.g. "circle").
+        // Our domain model also uses `type` ("composer", "opera"), which causes Sigma to crash.
+        const attrs = {
+          ...node.attributes,
+          entityType: node.attributes.type,
+          type: 'circle',
+        }
+        graph.addNode(node.key, attrs)
       }
 
       for (const edge of data.edges) {
         try {
-          graph.addEdge(edge.source, edge.target, {
+          // Sigma uses edge attribute `type` to pick a render program (e.g. "line").
+          // Our domain model also uses `type` ("composed_by", ...), which causes Sigma to crash.
+          const attrs = {
             ...edge.attributes,
+            edgeType: edge.attributes.type,
+            type: 'line',
             key: edge.key,
+          }
+          graph.addEdge(edge.source, edge.target, {
+            ...attrs,
           })
         } catch {
           // Skip duplicate edges or missing nodes
