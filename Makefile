@@ -11,7 +11,8 @@ endif
 .PHONY: setup setup-dirs setup-swift setup-go setup-web setup-scripts \
         fetch fetch-apis scrape-regional process \
         embed run-embeddings compute-projections \
-        build dev dev-daemon dev-stop dev-status dev-logs test-web all clean \
+        build build-s3 dev dev-daemon dev-stop dev-status dev-logs \
+        test-web screenshots all clean \
         scrape-socal scrape-norcal scrape-nm scrape-atl scrape-regional-all \
         serve server
 
@@ -88,6 +89,19 @@ compute-projections:
 build:
 	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run build
 
+# Build a self-contained static version suitable for S3/CDN hosting.
+# Bundles graph.json and projections.json into dist/ so no backend is needed.
+build-s3: build
+	@echo "Bundling data files for S3..."
+	@for f in graph.json projections.json; do \
+	  if [ -f "$(STATIC_DIR)/data/processed/$$f" ]; then \
+	    cp "$(STATIC_DIR)/data/processed/$$f" "$(REPO_DIR)/web/dist/$$f"; \
+	    echo "  Copied $$f"; \
+	  fi; \
+	done
+	@echo "S3 build ready at $(REPO_DIR)/web/dist/"
+	@echo "Deploy with: ./s3/deploy.sh <bucket-name>"
+
 dev:
 	cd $(REPO_DIR)/web && VITE_DATA_DIR=$(STATIC_DIR)/data/processed npm run dev -- --host 0.0.0.0 --port 5173 --strictPort
 
@@ -163,6 +177,26 @@ test-web:
 	  done; \
 	  echo "Running Playwright-Go tests..."; \
 	  (cd "$(REPO_DIR)/e2e" && ARTIFACTS_DIR="$$ARTIFACTS_DIR" VIOLETTA_BASE_URL="http://127.0.0.1:5173/" go test ./... -v)
+
+# Capture screenshots for README using Playwright-Go.
+# Runs the same test suite with CAPTURE_SCREENSHOTS=1 to save PNGs.
+screenshots:
+	@set -e; \
+	  export VITE_DATA_DIR="$(STATIC_DIR)/data/processed"; \
+	  ARTIFACTS_DIR="$(REPO_DIR)/.context/playwright"; \
+	  mkdir -p "$$ARTIFACTS_DIR"; \
+	  echo "Starting Vite dev server for screenshots..."; \
+	  (cd "$(REPO_DIR)/web" && npm run dev -- --host 0.0.0.0 --port 5173 --strictPort >"$$ARTIFACTS_DIR/vite-dev.log" 2>&1 & echo $$! >"$$ARTIFACTS_DIR/vite-dev.pid"); \
+	  PID=$$(cat "$$ARTIFACTS_DIR/vite-dev.pid"); \
+	  trap 'kill $$PID >/dev/null 2>&1 || true' EXIT; \
+	  i=0; \
+	  until curl -fsS http://127.0.0.1:5173/ >/dev/null 2>&1; do \
+	    i=$$((i+1)); \
+	    if [ $$i -gt 80 ]; then echo "Timed out waiting for dev server."; exit 1; fi; \
+	    sleep 0.25; \
+	  done; \
+	  echo "Capturing screenshots..."; \
+	  (cd "$(REPO_DIR)/e2e" && CAPTURE_SCREENSHOTS=1 ARTIFACTS_DIR="$$ARTIFACTS_DIR" VIOLETTA_BASE_URL="http://127.0.0.1:5173/" go test -run TestScreenshots -v)
 
 # ── Serve ──────────────────────────────────────────────────────────────
 

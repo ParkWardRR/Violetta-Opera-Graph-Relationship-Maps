@@ -12,10 +12,18 @@ import { AdminPage } from '@/components/AdminPage'
 import { DiscoverPage } from '@/components/DiscoverPage'
 import { EventsView } from '@/components/EventsView'
 import { ScraperPage } from '@/components/ScraperPage'
+import { NowPlaying } from '@/components/NowPlaying'
 import { usePreferencesStore } from '@/store/preferencesStore'
 import { useResolvedTheme } from '@/lib/useResolvedTheme'
 
 type Tab = 'network' | 'timeline' | 'discover' | 'events'
+
+const TAB_ICONS: Record<Tab, string> = {
+  network: '\u25C9',
+  timeline: '\u2014',
+  discover: '\u2606',
+  events: '\u266A',
+}
 
 function GearIcon() {
   return (
@@ -55,7 +63,12 @@ export default function App() {
   if (loading) {
     return (
       <div className="h-screen flex items-center justify-center bg-[color:var(--c-bg)]">
-        <div className="text-[color:var(--c-muted)] text-lg">Loading opera graph data...</div>
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/20 flex items-center justify-center text-white font-bold text-xl animate-pulse">
+            V
+          </div>
+          <div className="text-[color:var(--c-muted)] text-sm">Loading opera graph data...</div>
+        </div>
       </div>
     )
   }
@@ -63,10 +76,13 @@ export default function App() {
   if (error) {
     return (
       <div className="h-screen flex items-center justify-center bg-[color:var(--c-bg)]">
-        <div className="text-center">
-          <div className="text-[color:var(--c-danger)] text-lg mb-2">Failed to load graph data</div>
-          <div className="text-[color:var(--c-muted-2)] text-sm">{error}</div>
-          <div className="text-[color:var(--c-muted-2)] text-xs mt-4">
+        <div className="text-center max-w-md">
+          <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 font-bold text-xl mx-auto mb-4">
+            !
+          </div>
+          <div className="text-[color:var(--c-danger)] text-lg font-semibold mb-2">Failed to load graph data</div>
+          <div className="text-[color:var(--c-muted-2)] text-sm mb-4">{error}</div>
+          <div className="text-[color:var(--c-muted-2)] text-xs">
             Make sure graph.json exists at ~/Violetta-Opera-Graph-Relationship-Maps/data/processed/
           </div>
         </div>
@@ -79,43 +95,50 @@ export default function App() {
   return (
     <div className="h-screen flex flex-col bg-[color:var(--c-bg)]">
       {/* Header */}
-      <div className="sticky top-0 z-40 flex items-center justify-between px-6 py-3 bg-[color:var(--c-panel)]/80 backdrop-blur-md border-b border-[color:var(--c-border)] shadow-sm transition-all">
+      <div className="sticky top-0 z-40 flex items-center justify-between px-6 py-2.5 bg-[color:var(--c-panel)]/80 backdrop-blur-md border-b border-[color:var(--c-border)] shadow-sm transition-all">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/20 flex items-center justify-center text-white font-bold text-lg select-none">V</div>
-          <h1 className="text-base font-semibold text-[color:var(--c-text)] tracking-tight">Violetta Opera Graph</h1>
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/20 flex items-center justify-center text-white font-bold text-lg select-none">
+            V
+          </div>
+          <div>
+            <h1 className="text-sm font-semibold text-[color:var(--c-text)] tracking-tight leading-none">Violetta</h1>
+            <span className="text-[10px] text-[color:var(--c-muted-2)] leading-none">Opera Graph</span>
+          </div>
         </div>
 
-        <div className="absolute left-1/2 -translate-x-1/2 flex gap-1 p-1 rounded-full bg-[color:var(--c-panel-2)]/50 backdrop-blur-sm border border-[color:var(--c-border)] shadow-inner">
+        <div className="absolute left-1/2 -translate-x-1/2 flex gap-0.5 p-1 rounded-full bg-[color:var(--c-panel-2)]/50 backdrop-blur-sm border border-[color:var(--c-border)] shadow-inner">
           {(['network', 'timeline', 'discover', 'events'] as const).map((tab) => (
             <button
               key={tab}
-              className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 ${activeTab === tab
-                  ? 'bg-[color:var(--c-panel)] text-[color:var(--c-text)] shadow-sm scale-105'
+              className={`px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
+                activeTab === tab
+                  ? 'bg-[color:var(--c-panel)] text-[color:var(--c-text)] shadow-sm'
                   : 'text-[color:var(--c-muted)] hover:text-[color:var(--c-text)] hover:bg-white/5'
-                }`}
+              }`}
               onClick={() => setActiveTab(tab)}
             >
+              <span className="text-[10px] opacity-60">{TAB_ICONS[tab]}</span>
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <ThemeToggle resolvedTheme={resolvedTheme} />
           <button
             onClick={() => setPage('preferences')}
-            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg text-[color:var(--c-muted)] hover:text-[color:var(--c-text)] hover:bg-[color:var(--c-panel-2)] transition-colors"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-lg text-[color:var(--c-muted)] hover:text-[color:var(--c-text)] hover:bg-[color:var(--c-panel-2)] transition-colors"
             title="Preferences"
           >
             <GearIcon />
-            <span className="hidden sm:inline">Preferences</span>
+            <span className="hidden sm:inline">Prefs</span>
           </button>
           <button
             onClick={() => setPage('scraper')}
-            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10 border border-emerald-500/20 transition-all"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-lg text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10 border border-emerald-500/20 transition-all"
             title="URL Scraper"
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Scraper
           </button>
           <ExportMenu />
@@ -144,6 +167,7 @@ export default function App() {
                 <TimelineView resolvedTheme={resolvedTheme} />
               )}
               {showEraLegend ? <EraLegend /> : null}
+              <NowPlaying onViewAll={() => setActiveTab('events')} />
             </div>
             <NodeDetail />
           </>

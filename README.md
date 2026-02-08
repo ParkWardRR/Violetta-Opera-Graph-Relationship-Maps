@@ -198,6 +198,59 @@ make all    # setup -> fetch -> embed -> build -> serve
 
 ---
 
+## Screenshots
+
+Captured automatically with Playwright-Go (`make screenshots`).
+
+| View | Description |
+|:-----|:------------|
+| **Network Graph** | Force-directed graph with ForceAtlas2 layout. Operas clustered around composers, colored by era. |
+| **Timeline (Scatter)** | Every opera plotted by premiere year with connecting lines showing relationships. Zoomed in on the Late Romantic golden age. |
+| **Timeline (Decades)** | Decade-bucketed view with jitter for visual separation. |
+| **Discover** | Guided tours, glossary, and era history for opera newcomers. |
+| **Events** | Local opera performances scraped from venue websites. |
+
+To regenerate screenshots: `make screenshots`
+
+---
+
+## S3 / Static Hosting
+
+Violetta can be deployed as a static site on S3 (or any static host) with no backend required. The graph visualization works fully offline -- only the Events/Scraper features need the Go server.
+
+### Build for S3
+
+```bash
+make build-s3
+# Output: web/dist/ with graph.json bundled in
+```
+
+### Deploy to S3
+
+```bash
+./s3/deploy.sh my-violetta-bucket --region us-east-1
+```
+
+This will:
+1. Build the web UI with Vite
+2. Bundle `graph.json` and `projections.json` into `dist/`
+3. Create the S3 bucket with website hosting
+4. Set public read access
+5. Upload with cache headers (1 year for assets, 5 minutes for HTML/JSON)
+
+The SPA routing is handled by setting `index.html` as both the index and error document.
+
+### Manual S3 upload
+
+```bash
+make build-s3
+aws s3 sync web/dist/ s3://my-bucket --delete
+aws s3api put-bucket-website --bucket my-bucket \
+  --website-configuration file://s3/website-config.json
+```
+
+---
+
 ## System Architecture
 
 ```mermaid
@@ -432,6 +485,9 @@ graph LR
 | `make scrape-nm` | Scrape New Mexico venues only |
 | `make scrape-atl` | Scrape Atlanta venues only |
 | `make scrape-regional-all` | Scrape all regional venues |
+| `make build-s3` | Build self-contained static site for S3/CDN deployment |
+| `make screenshots` | Capture UI screenshots with Playwright-Go for README |
+| `make test-web` | Run Playwright-Go e2e smoke tests |
 | `make clean` | Remove build artifacts (preserves fetched data) |
 
 ## Data Sources
