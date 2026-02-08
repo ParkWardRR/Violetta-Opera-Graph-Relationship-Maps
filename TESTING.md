@@ -18,6 +18,16 @@ Then open:
 http://127.0.0.1:5173/
 ```
 
+If your browser says it "can’t connect", the dev server likely isn’t running anymore (closing the terminal stops it).
+Use the daemon targets to keep it running in the background:
+
+```bash
+make dev-daemon
+make dev-status
+make dev-logs
+make dev-stop
+```
+
 ## Web UI (Playwright-Go smoke test)
 
 This is a fast check that the app loads, successfully fetches `graph.json`, and renders a WebGL canvas.
@@ -28,4 +38,3 @@ make test-web
 
 Artifacts:
 - Screenshots and the Vite dev log are written to `.context/playwright/`.
-
