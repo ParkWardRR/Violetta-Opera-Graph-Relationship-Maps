@@ -19,8 +19,8 @@ export const useGraphStore = create<GraphState>((set) => ({
   loadGraph: async () => {
     set({ loading: true, error: null })
     try {
-      // Vite serves graph.json from publicDir (~/Violetta-Opera-Graph-Relationship-Maps/data/processed/)
-      const response = await fetch('/graph.json')
+      // import.meta.env.BASE_URL is "/" locally and "/Violetta-Opera-Graph-Relationship-Maps/" on GH Pages
+      const response = await fetch(`${import.meta.env.BASE_URL}graph.json`)
       if (!response.ok) throw new Error(`Failed to load graph.json: ${response.statusText}`)
 
       const data: GraphDocument = await response.json()

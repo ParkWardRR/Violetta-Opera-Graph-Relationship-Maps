@@ -6,7 +6,7 @@ export function NowPlaying({ onViewAll }: { onViewAll: () => void }) {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    fetch('/api/events')
+    fetch(`${import.meta.env.BASE_URL}api/events`)
       .then((res) => {
         if (!res.ok) throw new Error('not available')
         return res.json()

@@ -13,7 +13,7 @@ export function AdminPage({ onClose }: { onClose: () => void }) {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
 
-    const API_BASE = 'http://localhost:8080/api'
+    const API_BASE = `${import.meta.env.BASE_URL}api`
 
     useEffect(() => {
         fetchConfig()
