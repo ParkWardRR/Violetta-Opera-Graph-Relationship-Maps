@@ -1,5 +1,12 @@
 STATIC_DIR := $(HOME)/Violetta-Opera-Graph-Relationship-Maps
 REPO_DIR   := $(shell pwd)
+UNAME_S    := $(shell uname -s)
+
+# Playwright's `--with-deps` is intended for Linux package managers.
+PLAYWRIGHT_INSTALL_ARGS := chromium
+ifeq ($(UNAME_S),Linux)
+PLAYWRIGHT_INSTALL_ARGS := --with-deps chromium
+endif
 
 .PHONY: setup setup-dirs setup-swift setup-go setup-web setup-scripts \
         fetch fetch-apis scrape-regional process \
@@ -28,7 +35,7 @@ setup-swift:
 
 setup-go:
 	cd $(REPO_DIR)/scraper && go mod download
-	cd $(REPO_DIR)/scraper && go run github.com/playwright-community/playwright-go/cmd/playwright install --with-deps chromium
+	cd $(REPO_DIR)/scraper && go run github.com/playwright-community/playwright-go/cmd/playwright@latest install $(PLAYWRIGHT_INSTALL_ARGS)
 
 setup-web:
 	cd $(REPO_DIR)/web && npm install
